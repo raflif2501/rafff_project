@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'HELLO WORLD',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -48,16 +48,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
+  int _counter = 1;
+  int _cek=1;
+  String _prima='';
+  String _hasil = 'Bukan Bilangan Prima';
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
+      if(_counter>20){
+        _counter=1;
+      }
+        for (int _i=2; _i<=_counter; _i++){
+          _cek=1;
+          for (int _j=2; _j<_i; _j++){
+            if(_i%_j==0)
+            {
+              _cek=0;
+            }
+          }
+          if(_cek==1){
+            _hasil='Bilangan Prima ';
+            _prima += ' ${_i}, ';
+          }else{
+            _hasil='Bukan Bilangan Prima';
+          }
+        }
     });
   }
 
@@ -96,10 +111,18 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'RAFLI FIRDAUS FALAKA',
             ),
             Text(
               '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              _hasil,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              _prima,
               style: Theme.of(context).textTheme.headline4,
             ),
           ],

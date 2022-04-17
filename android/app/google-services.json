@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "901856086618",
+    "project_id": "project-2aade",
+    "storage_bucket": "project-2aade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901856086618:android:0781042c3f0baf51666663",
+        "android_client_info": {
+          "package_name": "com.example.rafff_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901856086618-0q1umt86d26079qd8sitqgv36sqn8tdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtxoSDR5KwPL9LFT6qPUfXaAMB31RkWTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901856086618-0q1umt86d26079qd8sitqgv36sqn8tdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

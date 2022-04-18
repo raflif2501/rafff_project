@@ -4,9 +4,7 @@ import 'package:rafff_project/model/tourism_place.dart';
 import 'package:rafff_project/Sevice/api_service.dart';
 import 'package:rafff_project/screen/halaman_tambah.dart';
 import 'package:rafff_project/widgets/detail_wisata.dart';
-// import 'package:tugas3/widgets/detail_wisata.dart';
 import 'package:rafff_project/widgets/item_wisata.dart';
-// import 'halaman_tambah_edit.dart';
 
 class HalamanUtama extends StatelessWidget {
 

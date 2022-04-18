@@ -1,15 +1,37 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:rafff_project/model/tourism_place.dart';
+import 'package:rafff_project/screen/halaman_edit.dart';
+import 'package:http/http.dart' as http;
+import 'package:rafff_project/screen/halaman_utama.dart';
 class DetailWisata extends StatelessWidget {
   const DetailWisata({Key? key, required this.data}) : super(key: key);
 
   final Place data;
+  Future hapusWisata(String wisataId) async {
+    String _url = "https://625a05cb43fda1299a14aa37.mockapi.io/api/v1/tourism-places/" + wisataId;
+    var response = await http.delete(Uri.parse(_url));
 
+    return json.decode(response.body);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Wisata'),
+        title: Text('Detail Wisata'),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () async {
+                hapusWisata(data.id.toString()).then((value) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HalamanUtama()));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Wisata berhasil dihapus"),
+                      ));
+                });
+              },
+              icon: Icon(Icons.delete))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -95,6 +117,13 @@ class DetailWisata extends StatelessWidget {
             ),//Container for Photos
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.edit),
+        onPressed: () async {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => EditWisata(data: data)));
+        },
       ),
     );
   }
